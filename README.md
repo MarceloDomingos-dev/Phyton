@@ -1,4 +1,4 @@
-# Phyton
+# python
 
 Este repositorio reune as atividades de Python/Flask que estavam separadas em varios repositorios.
 
