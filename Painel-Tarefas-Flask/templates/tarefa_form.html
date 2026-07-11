@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}{{ action_label }} - Painel de Tarefas{% endblock %}
+
+{% block content %}
+<div class="page-narrow">
+  <div class="d-flex align-items-center justify-content-between gap-3 mb-4">
+    <h1 class="h2 mb-0">{{ action_label }}</h1>
+    <a class="btn btn-outline-secondary" href="{{ url_for('dashboard') }}">
+      <i class="bi bi-arrow-left me-1"></i> Voltar
+    </a>
+  </div>
+
+  <form method="post" class="task-form vstack gap-3">
+    <div>
+      <label class="form-label" for="titulo">Titulo</label>
+      <input class="form-control" id="titulo" name="titulo" required value="{{ task['titulo'] if task else '' }}">
+    </div>
+    <div>
+      <label class="form-label" for="descricao">Descricao</label>
+      <textarea class="form-control" id="descricao" name="descricao" rows="5">{{ task['descricao'] if task else '' }}</textarea>
+    </div>
+    <div>
+      <label class="form-label" for="status">Status</label>
+      <select class="form-select" id="status" name="status">
+        {% for value, label in status_options.items() %}
+          <option value="{{ value }}" {% if task and task['status'] == value %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="d-flex gap-2">
+      <button class="btn btn-primary" type="submit">
+        <i class="bi bi-check2 me-1"></i> Salvar
+      </button>
+      <a class="btn btn-outline-secondary" href="{{ url_for('dashboard') }}">Cancelar</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

@@ -15,6 +15,7 @@ Este repositorio reune as atividades de Python/Flask que estavam separadas em va
 | `Atividade-Flask` | https://github.com/MarceloDomingos-dev/Atividade-Flask |
 | `Atividade-Jinja-e-Atividade-5` | https://github.com/MarceloDomingos-dev/Atividade-Jinja-e-Atividade-5 |
 | `Atividades-FLASK-SQLalchemy` | https://github.com/MarceloDomingos-dev/Atividades-FLASK-SQLalchemy |
+| `Painel-Tarefas-Flask` | Atividade criada a partir do enunciado enviado por imagem |
 
 Cada atividade esta em sua propria pasta para facilitar a avaliacao.
 

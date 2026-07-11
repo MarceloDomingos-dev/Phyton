@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Progresso - Painel de Tarefas{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
+  <div>
+    <h1 class="h2 mb-1">Dashboard de progresso</h1>
+    <p class="text-body-secondary mb-0">Resumo visual das tarefas por status.</p>
+  </div>
+  <a class="btn btn-outline-primary" href="{{ url_for('dashboard') }}">
+    <i class="bi bi-grid me-1"></i> Ver tarefas
+  </a>
+</div>
+
+<div class="row g-4">
+  <div class="col-12 col-lg-7">
+    <section class="chart-panel">
+      <h2 class="h5 mb-3">Grafico de barras</h2>
+      <canvas id="barChart" height="140"></canvas>
+    </section>
+  </div>
+  <div class="col-12 col-lg-5">
+    <section class="chart-panel">
+      <h2 class="h5 mb-3">Grafico de pizza</h2>
+      <canvas id="pieChart" height="200"></canvas>
+    </section>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='vendor/chart.umd.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/progresso.js') }}"></script>
+{% endblock %}

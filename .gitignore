@@ -9,6 +9,7 @@ env/
 instance/
 *.sqlite3
 *.db
+*.log
 .pytest_cache/
 .coverage
 htmlcov/
