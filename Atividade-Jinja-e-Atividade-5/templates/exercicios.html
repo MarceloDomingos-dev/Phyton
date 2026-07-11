@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade Jinja</title>
+</head>
+<body>
+
+    <h2>Atividade Jinja</h2>
+    <hr>
+
+    <h3>Questão 1</h3>
+    <p>Olá, {{ nome }}</p>
+
+    <hr>
+
+    <h3>Questão 2</h3>
+    <p>Nome: {{ nome }}</p>
+    <p>Idade: {{ idade }} anos</p>
+
+    <hr>
+
+    <h3>Questão 3</h3>
+    <p>Nome do Usuário: {{ usuario.nome }}</p>
+    <p>E-mail do Usuário: {{ usuario.email }}</p>
+
+    <hr>
+
+    <h3>Questão 4</h3>
+    <ul>
+        {% for aluno in alunos %}
+        <li>{{ loop.index }} - {{ aluno }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h3>Questão 5</h3>
+    <p>Nota: {{ nota }}</p>
+    {% if nota >= 7 %}
+    <p style="color: green; font-weight: bold;">Aprovado</p>
+    {% else %}
+    <p style="color: red; font-weight: bold;">Reprovado</p>
+    {% endif %}
+
+</body>
+</html>

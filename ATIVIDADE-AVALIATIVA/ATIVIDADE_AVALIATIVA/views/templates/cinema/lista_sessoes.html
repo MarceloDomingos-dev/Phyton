@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block title %}Cinema - ATIVIDADE_AVALIATIVA{% endblock %}
+
+{% block content %}
+<h1>Programação do Cinema</h1>
+<p><a class="btn" href="{{ url_for('cinema.cadastrar_sessao') }}">+ Nova sessão</a></p>
+
+{% if sessoes %}
+<table>
+    <thead>
+        <tr>
+            <th>Filme</th>
+            <th>Sala</th>
+            <th>Data/hora</th>
+            <th>Preço</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sessao in sessoes %}
+        <tr>
+            <td>{{ sessao.filme.titulo }}</td>
+            <td>Sala {{ sessao.sala.numero }} - {{ sessao.sala.capacidade }} lugares</td>
+            <td>{{ sessao.data_hora.strftime('%d/%m/%Y %H:%M') }}</td>
+            <td>R$ {{ "%.2f"|format(sessao.preco) }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p class="vazio">Nenhuma sessão cadastrada ainda.</p>
+{% endif %}
+{% endblock %}
